@@ -1,0 +1,5 @@
+  let text1 = 'He said in the same casual tone:’And you can’t give me any further information?’ Mr Isaac Morris had shaken his little bald head very positively. ’No, Captain Lombard, the matter rests there. It is understood by my client that your reputation is that of a good man in a tight place...’'
+   
+    let text = text1.replace(/\B’|’\B/g, '’’');
+    
+       console.log(text);
