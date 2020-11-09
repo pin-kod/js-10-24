@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+        <div id="app">
+        <header>
+            <a href="/" class="logo">E-shop</a>
+            <input v-model="searchValue" type="text" class="search" placeholder="Поиск" />
+            <button class="cart-button">Корзина</button>
+        </header>
+        <main>
+            <div class="goods">
+                <div class="item" v-for="item in filteredGoods">
+                    <h4>{{item.product_name}}</h4>
+                    <p>{{item.price}}</p>
+                    <button v-on:click="() => addItem(item)">Add to basket</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
