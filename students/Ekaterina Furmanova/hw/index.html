@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop</title>
+    <link href="style.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+        <div id="app">
+        <header>
+            <a href="/" >E-shop</a>
+            <input v-model="searchValue" type="text"  placeholder="Поиск" />
+            <button class="cart-button" v-on:click="isCartVisible = !isCartVisible">Корзина</button>
+            <div class="cart" v-if="isCartVisible">
+                <div class="cart-item" v-for="item in basketGoods">
+                    <h4>{{item.product_name}}</h4>
+                    <p>{{item.price}}</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <goods v-bind:goods="filteredGoods" v-on:add-item="(item) => addItem(item)" />
+        </main>
+    </div>
+</body>
+
+</html>
